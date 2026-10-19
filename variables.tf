@@ -99,11 +99,6 @@ variable "primary_connection_string" {
   type            = string   
 }
 
-variable "appSubnet_id" {
-  description     = "Specify the if of app subnet."
-  type            = string   
-}
-
 variable "is_manual_connection"{
   description     = "Specifies if the Private Endpoint require Manual Approval from the remote resource owner"
   type            = bool   

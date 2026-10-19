@@ -53,17 +53,3 @@ variable "os_type" {
 }
 
 
-variable "website_contentovervnet" {
-  description     = "Set to '1' to enable function app access to the Azure Files content share over a VNet. "
-  type            = number   
-  default         = 1 
-}
-
-
-
-variable "purposes" {
-  description = "List of purposes for the Function Apps"
-  type        = list(string)
-  default     = []
-}
-

@@ -44,15 +44,7 @@ resource "azurerm_linux_function_app" "funcAppLin" {
     }
   }
 
-  app_settings = {
-    FUNCTIONS_EXTENSION_VERSION               = "~4"
-    WEBSITE_CONTENTSHARE                      = azurerm_storage_share.fileShare[each.key].name
-    WEBSITE_CONTENTAZUREFILECONNECTIONSTRING  = var.primary_connection_string
-    WEBSITE_CONTENTOVERVNET                   = var.website_contentovervnet
-    AzureWebJobsStorage                       = var.primary_connection_string
-    FUNCTIONS_WORKER_RUNTIME                  = var.runtime
-    WEBSITE_RUN_FROM_PACKAGE                  = 1
-  }
+
 
   lifecycle {
     ignore_changes = [app_settings, tags]
@@ -87,15 +79,6 @@ resource "azurerm_windows_function_app" "funcAppWin" {
     }
   }
 
-  app_settings = {
-    FUNCTIONS_EXTENSION_VERSION               = "~4"
-    WEBSITE_CONTENTSHARE                      = azurerm_storage_share.fileShare[each.key].name
-    WEBSITE_CONTENTAZUREFILECONNECTIONSTRING  = var.primary_connection_string
-    WEBSITE_CONTENTOVERVNET                   = var.website_contentovervnet
-    AzureWebJobsStorage                       = var.primary_connection_string
-    FUNCTIONS_WORKER_RUNTIME                  = var.runtime
-    WEBSITE_RUN_FROM_PACKAGE                  = 1
-  }
 
   lifecycle {
     ignore_changes = [app_settings, tags]

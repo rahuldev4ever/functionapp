@@ -24,7 +24,6 @@ resource "azurerm_linux_function_app" "funcAppLin" {
   name                                     = local.funcapp_names[each.key]
   resource_group_name                      = var.resource_group_name
   location                                 = var.location
-  service_plan_id                          = var.service_plan_id
   public_network_access_enabled            = true
   
   https_only                               = true
@@ -70,7 +69,6 @@ resource "azurerm_windows_function_app" "funcAppWin" {
   name                          = local.funcapp_names[each.key]
   resource_group_name           = var.resource_group_name
   location                      = var.location
-  service_plan_id               = var.service_plan_id
   public_network_access_enabled = true
   https_only                    = true
   ftp_publish_basic_authentication_enabled = false

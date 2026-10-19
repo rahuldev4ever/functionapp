@@ -25,8 +25,6 @@ resource "azurerm_linux_function_app" "funcAppLin" {
   resource_group_name                      = var.resource_group_name
   location                                 = var.location
   service_plan_id                          = var.service_plan_id
-  storage_account_name                     = var.storage_account_name
-  storage_account_access_key               = var.storage_account_access_key
   public_network_access_enabled            = true
   
   https_only                               = true
@@ -73,8 +71,6 @@ resource "azurerm_windows_function_app" "funcAppWin" {
   resource_group_name           = var.resource_group_name
   location                      = var.location
   service_plan_id               = var.service_plan_id
-  storage_account_name          = var.storage_account_name
-  storage_account_access_key    = var.storage_account_access_key
   public_network_access_enabled = true
   https_only                    = true
   ftp_publish_basic_authentication_enabled = false
